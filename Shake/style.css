@@ -1,8 +1,7 @@
-* {
+*{
     margin: 0;
     padding: 0;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
+    font-family: 'Marmelad';
 }
 
 body {
@@ -15,6 +14,12 @@ body {
     width: 100vw;
     height: 100vh;
     background-color: rgb(148, 147, 147);
+    background-image: url(kur.png);
+    background-size: 240%;
+
+    background-repeat: no-repeat;
+   
+    
 }
 
 #top-header {
@@ -26,14 +31,14 @@ body {
 }
 
 .title {
-    color: rgb(0, 0, 0);
+    color: rgb(35, 35, 35);
     align-self: center;
     font-size: 6vw;
 }
 
 .title>P {
     font-size: 2vw;
-    color:rgb(92, 89, 89)
+    color: rgb(42, 42, 42)
 }
 
 .img {
@@ -51,43 +56,48 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    background-color: rgba(0, 0, 0, 0.149);
+    /* background-color: rgba(0, 0, 0, 0.149); */
     color: #c6bcbc;
     width: 300px;
     border-bottom-right-radius: 20px;
-    position: relative;
+    /* position: relative; */
     padding: 40px 20px;
-    visibility: hidden;
+    /* visibility: hidden; */
 }
 
 .sidebargo {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    background-color: rgba(0, 0, 0, 0.502);
+    /* background-color: rgba(0, 0, 0, 0.502); */
     width: 300px;
     border-bottom-right-radius: 20px;
-    position: relative;
-    padding: 40px 20px;
+    /* position: relative; */
+    padding: 20px;
     transform: translate;
     transition: 0s ease-in;
 }
-
+.sidebar-visible{
+    background-color: rgba(0, 0, 0, 0.419);  
+}
 
 
 .hamburger {
     display: flex;
-    position: absolute;
-    margin-left: 1180px;
-    gap: 210px;
+    /* position: absolute; */
+    /* margin-left: 1180px; */
+    /* flex-grow: 1; */
+    /* gap: 210px; */
     cursor: pointer;
-    margin-top: 4px;
+    /* margin-top: 4px; */
     /* border: 1px solid; */
+    justify-content: end;
 }
 
 .icon1 {
     width: 20px;
     opacity: 0.75;
+    user-select: none;
 
 }
 
@@ -95,7 +105,7 @@ body {
     width: 15px;
     height: 15px;
     opacity: 0.5;
-
+user-select: none;
 }
 
 
@@ -114,6 +124,7 @@ body {
     background-color: rgb(164, 159, 153);
     margin-top: 30px;
     box-shadow: 2px 2px 9px #00000063, -2px -2px 9px #ffffff;
+    position: relative;
 }
 
 
@@ -132,13 +143,28 @@ a {
 .hide {
     text-align: center;
     font-weight: bolder;
-    font-size: medium;
+    font-size: larger;
+/* height: ; */
 }
 
 .flex {
     display: flex;
 }
 
+.row {
+    flex-direction: row;
+}
+
+.col {
+    flex-direction: column;
+}
+
+.gap-1 {
+    gap: 1.25rem;
+}
+.justify-btw{
+    justify-content: space-between;
+}
 /* _____hover function _________*/
 
 .box-dim:hover {
@@ -189,4 +215,34 @@ a {
         flex-wrap: wrap;
 
     }
+}
+
+.ml-auto {
+    margin-left: auto;
+}
+
+
+.anim-typewriter{
+    animation: typewriter 3s steps(44) 1s infinite normal both,
+               blinkTextCursor 500ms steps(44) infinite normal;
+  }
+  @keyframes typewriter{
+    from{width: 0;}
+    to{width: var(--typ)}
+  }
+  @keyframes blinkTextCursor{
+    from{border-right-color: rgb(255, 0, 0);}
+    to{border-right-color: transparent;}
+  }
+  .line-1{
+    position: relative;
+    top: 50%;  
+    width: var(--typ);
+    border-right: 2px solid rgba(255,255,255,.75);
+    color: rgb(63, 63, 63) !important;
+    font-size: 180%;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    /* transform: translateY(-50%);     */
 }

@@ -1,26 +1,34 @@
-document.querySelector(".icon2").style.visibility = "hidden";
-document.querySelector(".icon1").addEventListener("click", () => {
-    document.querySelector(".sidebar").style.visibility = "visible";
 
-    if (document.querySelector('.sidebargo').classList.contains('.sidebar')) {
-        document.querySelector('.icon1').style.visibility = "visible"
-        document.querySelector('.icon2').style.visibility = "hidden"
-    }
-    else {
-        document.querySelector('.icon1').style.visibility = "hidden"
-        document.querySelector('.icon2').style.visibility = "visible"
-    }
-})
+const ham_btn = document.querySelector('.icon1');
+const cross_btn = document.querySelector('.icon2');
+const sidebar = document.querySelector('.sidebar');
+const nav_list = document.querySelector("#nav-list");
 
-document.querySelector(".icon2").addEventListener("click", () => {
-    document.querySelector(".sidebargo").style.visibility = "hidden";
+cross_btn.style.visibility = 'hidden';
+ham_btn.style.visibility = 'visible';
+nav_list.style.visibility = 'hidden';
+sidebar.classList.remove('sidebar-visible');
 
-    if (document.querySelector('.sidebargo').classList.contains('.sidebar')) {
-        document.querySelector('.icon1').style.visibility = "hidden"
-        document.querySelector('.icon2').style.visibility = "visible"
+ham_btn.addEventListener('click', () => {
+    nav_list.style.visibility = "visible";
+    sidebar.classList.add('sidebar-visible');
+    FlipBtnVisiblilty(cross_btn);
+});
+
+cross_btn.addEventListener('click', () => {
+    nav_list.style.visibility = 'hidden';
+    sidebar.classList.remove('sidebar-visible');
+    FlipBtnVisiblilty(ham_btn);
+});
+
+
+
+function FlipBtnVisiblilty(btn_to_show) {
+    let btn_to_hide = ham_btn;
+    if (btn_to_show === ham_btn) {
+        btn_to_hide = cross_btn
     }
-    else {
-        document.querySelector('.icon1').style.visibility = "visible"
-        document.querySelector('.icon2').style.visibility = "hidden"
-    }
-})
+    btn_to_show.style.visibility = 'visible';
+    btn_to_hide.style.visibility = 'hidden';
+
+}
