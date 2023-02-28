@@ -32,3 +32,14 @@ function FlipBtnVisiblilty(btn_to_show) {
     btn_to_hide.style.visibility = 'hidden';
 
 }
+
+const cursor = document.querySelector('.cursor');
+document.addEventListener('mousemove', (e) => {
+    cursor.style.left = numTO_Px(e.pageX+10);
+    cursor.style.top = numTO_Px(e.pageY+(-10));
+
+})
+
+function numTO_Px(number) {
+    return `${number}px`;
+}
